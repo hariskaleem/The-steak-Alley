@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════
+   CONTACT FORM CARD — matches navy + gold system
+   ═══════════════════════════════════════════════ */
+
+.formcard2 {
+  width: 500px;
+  max-width: 100%;
+  background: linear-gradient(160deg, #0d1b2a 0%, #091020 100%);
+  border: 1px solid rgba(189, 159, 103, 0.25);
+  border-radius: 18px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  position: relative;
+  padding: 2.2rem 2rem;
+  animation: card-fade-in 0.5s ease;
+  margin: 0 auto;
+}
+
+@keyframes card-fade-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Gold top accent line */
+.border2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #bd9f67, transparent);
+  border: none !important;
+  opacity: 1;
+  transform: none;
+  pointer-events: none;
+}
+
+.content2 {
+  position: relative;
+}
+
+.fheading1 {
+  margin: 0 0 1.5rem;
+}
+
+.fheading1 h2 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.forminput {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.forminput label {
+  display: block;
+  margin-top: 16px;
+  margin-bottom: 6px;
+  color: rgba(189, 159, 103, 0.8);
+  font-size: 11px;
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+}
+
+.forminput input,
+.forminput textarea {
+  width: 100%;
+  margin-bottom: 4px;
+  background-color: rgba(255, 255, 255, 0.04);
+  color: #fff !important;
+  border: 1px solid rgba(189, 159, 103, 0.2);
+  border-radius: 10px;
+  padding: 12px 14px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 14px;
+  transition: all 0.25s ease;
+  resize: vertical;
+}
+
+.forminput input::placeholder,
+.forminput textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.forminput input:focus,
+.forminput textarea:focus {
+  background-color: rgba(189, 159, 103, 0.06);
+  outline: none;
+  border-color: #bd9f67;
+  box-shadow: 0 0 0 3px rgba(189, 159, 103, 0.12);
+}
+
+.forminput button,
+.forminput .btn {
+  margin-top: 18px;
+}

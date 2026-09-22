@@ -1,0 +1,51 @@
+.fancy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  padding: 12px 28px;
+  background: rgba(189, 159, 103, 0.08);
+  color: #bd9f67;
+  font-size: 14px;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  border: 1px solid rgba(189, 159, 103, 0.35);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.fancy-btn:hover {
+  background: rgba(189, 159, 103, 0.16);
+  border-color: #bd9f67;
+}
+
+.fancy-btn .arrow-icon {
+  font-size: 16px;
+  transition: transform 0.25s ease;
+}
+
+.fancy-btn:hover .arrow-icon {
+  transform: translateX(3px);
+}
+
+.fancy-btn:active {
+  transform: scale(0.97);
+}
+
+.fancy-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.fancy-btn.black {
+  color: #0d1b2a;
+  background: rgba(13, 27, 42, 0.06);
+  border-color: rgba(13, 27, 42, 0.35);
+}
+
+.fancy-btn.black:hover {
+  background: rgba(13, 27, 42, 0.12);
+  border-color: #0d1b2a;
+}

@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=swap');
+
+:root {
+  --char: #0d1a25;
+  --char-2: #15293a;
+  --brass: #b8875a;
+  --brass-soft: rgba(184, 135, 90, 0.35);
+  --brass-faint: rgba(184, 135, 90, 0.2);
+  --bone: #ece4d5;
+  --bone-dim: #cabfae;
+}
+
+.chop-footer {
+  background-color: #15293a;
+  color: var(--bone-dim);
+}
+
+.chop-footer__col {
+  border-right: 1px solid var(--brass-faint);
+}
+
+@media (max-width: 991px) {
+  .chop-footer__col {
+    border-right: none;
+    border-bottom: 1px solid var(--brass-faint);
+    padding-bottom: 24px;
+  }
+}
+
+.chop-footer__heading {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+.chop-footer__text {
+  font-family: "Jost", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: var(--bone-dim);
+}
+
+.chop-footer__rule {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 20px;
+  height: 1px;
+  background-color: var(--brass-soft);
+  opacity: 1;
+  border: none;
+  flex-shrink: 1;
+}
+
+.chop-footer__brand {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 500;
+  color: var(--bone);
+  letter-spacing: 0.5px;
+  margin: 0;
+}
+
+.chop-footer__bar {
+  background-color: #0d1a25;
+  border-top: 1px solid var(--brass-faint);
+}
+
+.chop-footer__social {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+}
+
+.chop-footer__diamond {
+  color: var(--brass);
+  font-size: 10px;
+}
+
+.chop-footer__copyright {
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  color: var(--bone-dim);
+  margin-right: 40px;
+}
+
+@media (max-width: 767px) {
+  .chop-footer__rule {
+    width: 80px;
+  }
+
+  .chop-footer__bar {
+    flex-direction: column;
+    gap: 12px;
+    text-align: center;
+  }
+
+  .chop-footer__copyright {
+    margin-right: 0;
+  }
+
+  .chop-footer__social:first-of-type {
+    margin-left: 0 !important;
+  }
+}

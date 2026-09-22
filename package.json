@@ -1,0 +1,14 @@
+{
+  "name": "steakhouse-root",
+  "version": "1.0.0",
+  "description": "Steakhouse Restaurant - Root workspace",
+  "scripts": {
+    "start": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "backend": "npm run dev --prefix backend",
+    "frontend": "cross-env HOST=0.0.0.0 npm start --prefix frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "cross-env": "^10.1.0"
+  }
+}

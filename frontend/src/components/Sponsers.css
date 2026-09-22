@@ -1,0 +1,112 @@
+/* ══════════════════════════════════════════════════
+   SPONSOR MARQUEE STRIP
+   ══════════════════════════════════════════════════ */
+
+.sponsor-strip {
+  position: relative;
+  background: #07111d;
+  border-top: 1px solid rgba(189, 159, 103, 0.15);
+  border-bottom: 1px solid rgba(189, 159, 103, 0.15);
+  padding: 22px 0;
+  overflow: hidden;
+}
+
+/* Soft fade masks on left & right edges */
+.sponsor-fade-left,
+.sponsor-fade-right {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 120px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.sponsor-fade-left {
+  left: 0;
+  background: linear-gradient(to right, #07111d 0%, transparent 100%);
+}
+
+.sponsor-fade-right {
+  right: 0;
+  background: linear-gradient(to left, #07111d 0%, transparent 100%);
+}
+
+/* Scrolling wrapper — clip overflow */
+.sponsor-track-wrapper {
+  overflow: hidden;
+  width: 100%;
+}
+
+/* The moving belt */
+@keyframes marquee-scroll {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-33.333%); }
+}
+
+.sponsor-track {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  width: max-content;
+  animation: marquee-scroll 22s linear infinite;
+}
+
+.sponsor-track:hover {
+  animation-play-state: paused;
+}
+
+/* Individual logo pill */
+.sponsor-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 32px;
+  border-right: 1px solid rgba(189, 159, 103, 0.15);
+  white-space: nowrap;
+  cursor: default;
+  transition: all 0.25s ease;
+}
+
+.sponsor-logo:hover {
+  background: rgba(189, 159, 103, 0.07);
+}
+
+.sponsor-logo i {
+  font-size: 18px;
+  color: rgba(189, 159, 103, 0.55);
+  transition: color 0.25s ease, text-shadow 0.25s ease;
+}
+
+.sponsor-logo span {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.45);
+  transition: color 0.25s ease;
+}
+
+/* Hover: light up gold */
+.sponsor-logo:hover i {
+  color: #bd9f67;
+  text-shadow: 0 0 12px rgba(189, 159, 103, 0.5);
+}
+
+.sponsor-logo:hover span {
+  color: #bd9f67;
+}
+
+/* Reduce speed slightly on very small screens */
+@media (max-width: 480px) {
+  .sponsor-track {
+    animation-duration: 16s;
+  }
+  .sponsor-logo {
+    padding: 10px 22px;
+  }
+  .sponsor-logo span {
+    font-size: 0.9rem;
+  }
+}

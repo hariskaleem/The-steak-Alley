@@ -1,0 +1,601 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+/* TABLE OF CONTENTS */
+/* ------------------
+1. General
+2. Navbar
+3. Banner
+4. About
+5. Services
+6. Portfolio
+6. Contact
+7. Footer
+-------------------- */
+
+/* 1 General */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* Background Color */
+  --primary-color: #bd9f67;
+  --secondary-color: #0e1525;
+  --bg-dark-blue: #091020;
+  --bg-white: #ffffff;
+  --gray-color: #c6c9d8bf;
+  --gradient-color: linear-gradient(-224deg, var(--primary-color) 0, #337DFF 100%);
+  --gradient-text: linear-gradient(120deg, #1C99FE 20.69%, #7644FF 50.19%, var(--primary-color) 79.69%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='var(--primary-color)', endColorstr='var(--secondary-color)', GradientType=1);
+
+  /* Text Color */
+  --primary-font: 'Merriweather', serif;
+  --primary-text: #8000ff;
+  --text-gray: #c6c9d8bf;
+  --text-white: #ffffff;
+  --text-black: #000000;
+}
+
+body {
+  font-family: var(--primary-font);
+  background-color: #15293a;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* 1 Custom CSS */
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-dark-blue);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-color);
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+section {
+  padding: 50px 0;
+}
+
+.main-btn {
+  position: relative;
+  display: inline-block;
+  margin: 15px;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 1px;
+  text-decoration: none;
+  color: #bd9f67;
+  background: transparent;
+  cursor: pointer;
+  transition: ease-out 0.5s;
+  border: 2px solid #bd9f67;
+  border-radius: 10px;
+  box-shadow: inset 0 0 0 0 #bd9f67;
+}
+
+.main-btn:hover {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--text-white);
+  color: white;
+  box-shadow: inset 0 -100px 0 0 #bd9f67;
+}
+
+
+/* 
+h1 {
+    font-size: 54px;
+    line-height: 68px;
+    font-weight: 100 !important;
+    color: var(--text-white);
+    margin-bottom: 20px;
+}
+
+h1 span {
+    color: var(--primary-color);
+}
+
+h2 {
+    font-size: 50px;
+    line-height: 1.3;
+    font-weight: 100 !important;
+    color: var(--text-white);
+    margin-bottom: 15px;
+}
+
+h3 {
+    margin-bottom: 19px;
+    font-weight: 700 !important;
+    font-size: 20px;
+    color: var(--text-white);
+}
+
+h5 {
+    margin-bottom: 19px;
+    font-weight: 1000 !important;
+    font-size: 20px;
+    color: var(--text-white);
+}
+
+h6 {
+    color: var(--text-white);
+    font-size: 15px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    display: block;
+    margin-bottom: 20px;
+}
+
+p {
+    color: var(--text-white);
+    font-size: 16px;
+    line-height: 28px;
+    letter-spacing: 1px;
+    font-weight: 400;
+}
+ */
+
+/* Banner  */
+.banner_wrapper {
+  width: 100%;
+  height: auto;
+  min-height: 550px;
+  background-image: url('../public/images/emerson-vieira-_aR4l6fj6wQ-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.banner_wrapper::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner_wrapper>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+.banner_wrapper2 {
+  width: 100%;
+  height: 550px;
+  background-image: url('../public/images/fried-beef-steak-wooden-board (1).jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.banner_wrapper2::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner_wrapper2>* {
+  position: relative;
+  z-index: 2;
+}
+
+.banner_wrapper3 {
+  width: 100%;
+  height: 550px;
+  background-image: url('../public/images/hitesh-dewasi-F-wom_-3mZY-unsplash (1).jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.banner_wrapper3::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner_wrapper3>* {
+  position: relative;
+  z-index: 2;
+}
+
+.banner_wrapper4 {
+  width: 100%;
+  height: 550px;
+  background-image: url('../public/images/jason-leung-poI7DelFiVA-unsplash\ \(1\).jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.banner_wrapper4::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner_wrapper4>* {
+  position: relative;
+  z-index: 2;
+}
+
+.banner_wrapper5 {
+  width: 100%;
+  height: 450px;
+  background-image: url('../public/images/luis-santoyo-cbOPFa48IqM-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+  margin-top: 100px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.banner_wrapper5::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner_wrapper5>* {
+  position: relative;
+  z-index: 2;
+}
+
+#email1 {
+  display: block;
+  margin: 0 auto;
+  width: 700px;
+  height: 58px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid #bd9f67;
+  padding: 10px;
+  border-radius: 0px;
+}
+
+#email1::placeholder {
+  color: #ccc;
+}
+
+#email1:focus {
+  background-color: transparent;
+  color: white;
+  outline: none;
+  /* removes the blue outline */
+  border-color: #bd9f67;
+  box-shadow: 0 0 5px #bd9f67;
+  /* optional gold glow effect */
+}
+
+.banner_wrapper6 {
+  width: 100%;
+  height: 450px;
+  background-image: url('../public/images/tim-toomey-pe9dvM1rQkM-unsplash.jpg');
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.banner_wrapper6::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.banner_wrapper6>* {
+  position: relative;
+  z-index: 2;
+}
+
+
+.vbanner_wrapper1 {
+  width: 100%;
+  height: auto;
+  min-height: 550px;
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: scroll;
+  padding: 200px 0 100px 0;
+  position: relative;
+}
+
+.vbanner_wrapper1::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.vbanner_wrapper1>* {
+  position: relative;
+  z-index: 2;
+}
+
+/* Slider customization */
+.slick-slide {
+  padding: 0 10px;
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: #000;
+}
+
+.card {
+  transition: transform 0.3s ease;
+  cursor: grab;
+  border: none;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+
+
+
+
+/* Chef card  */
+
+
+.chefcard2 {
+  width: 300px;
+  height: 500px;
+  background: transparent;
+  border: 2px solid #bd9f67;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.border {
+  position: absolute;
+  inset: 0;
+  border: 2px solid #bd9f67 !important;
+  opacity: 0;
+  transform: rotate(10deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.chefcard2:hover {
+  transform: scale(1.05);
+  border-radius: 0;
+}
+
+.chefcard2:hover .border {
+  opacity: 1;
+  transform: rotate(0);
+  inset: 12px;
+}
+
+
+
+.chefcard2:hover .bottom-text {
+  opacity: 1;
+  letter-spacing: 6px;
+}
+
+/* Product Image */
+.image_container1 {
+  background: transparent;
+  height: 180px;
+  justify-content: center;
+  align-items: center;
+}
+
+.image2 {
+  width: 100%;
+  height: 350px;
+  border-bottom-left-radius: 90px;
+  border-top-right-radius: 90px;
+  fill: #243137;
+  object-fit: cover;
+  object-position: top center;
+}
+
+.title2 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-top: 190px;
+  text-align: center;
+}
+
+
+.action2 {
+  /* display: flex; */
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 1.2rem;
+}
+
+.designation1 {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 1.4rem;
+}
+
+
+
+
+
+/* Responsive code  */
+@media (max-width:991px) {
+
+  /* custom css */
+  section {
+    padding: 30px 0;
+  }
+
+  h2 {
+    font-size: 30px;
+    line-height: 40px;
+  }
+
+  h3 {
+    font-size: 20px;
+  }
+
+  /* 2 Navbar */
+  .header-scrolled {
+    height: auto;
+  }
+
+  .header_wrapper .menu-navbar-nav {
+    text-align: center;
+    background-color: white;
+    border-radius: 8%;
+    padding-bottom: 15px 0;
+  }
+
+  .header_wrapper .nav-item .nav-link {
+    margin-top: 15px;
+  }
+
+
+}
+
+@media (max-width: 767px) {
+
+  /* custom css */
+  h1 {
+    font-size: 40px;
+    line-height: 48px;
+  }
+
+  h2 {
+    font-size: 25px;
+  }
+
+  p {
+    font-size: 13px;
+    line-height: 24px;
+  }
+
+
+
+}

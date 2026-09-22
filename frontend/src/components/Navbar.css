@@ -1,0 +1,355 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;1,500&family=Jost:wght@400;500&display=swap");
+
+:root {
+  --char: #0d1a25;
+  --brass: #b8875a;
+  --brass-soft: rgba(184, 135, 90, 0.35);
+  --brass-faint: rgba(184, 135, 90, 0.2);
+  --bone: #ece4d5;
+  --bone-dim: #cabfae;
+}
+
+.header_wrapper {
+  position: relative;
+}
+
+/* ---------- navbar shell ---------- */
+
+.chop-navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+}
+
+.chop-navbar--scrolled {
+  background-color: rgba(21, 41, 58, 0.95);
+  backdrop-filter: blur(8px);
+}
+
+.chop-navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 20px 32px;
+}
+
+.chop-hairline {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--brass-soft) 20%, var(--brass-soft) 80%, transparent);
+}
+
+/* ---------- brand ---------- */
+
+.chop-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  text-decoration: none;
+}
+
+.chop-brand__mark {
+  font-family: "Fraunces", serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 22px;
+  color: var(--bone);
+  letter-spacing: 0.5px;
+}
+
+.chop-brand__divider {
+  width: 1px;
+  height: 20px;
+  background: var(--brass-soft);
+}
+
+.chop-brand__label {
+  font-family: "Jost", sans-serif;
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+/* ---------- nav collapse (desktop: always visible) ---------- */
+
+.chop-nav-collapse {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* ---------- links ---------- */
+
+.chop-links {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.chop-link {
+  position: relative;
+  font-family: "Jost", sans-serif;
+  font-size: 12px;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+  text-decoration: none;
+  padding-bottom: 6px;
+  display: inline-block;
+  transition: color 0.25s ease;
+}
+
+.chop-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 1px;
+  background: var(--brass);
+  transform: skewX(-20deg);
+  transition: width 0.3s ease;
+}
+
+.chop-link:hover,
+.chop-link.active {
+  color: var(--bone);
+}
+
+.chop-link:hover::after,
+.chop-link.active::after {
+  width: 100%;
+}
+
+/* ---------- actions ---------- */
+
+.chop-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.chop-icon-btn {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid var(--brass-soft);
+  background: transparent;
+  color: var(--brass);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: "Jost", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease;
+}
+
+.chop-cart-count {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  min-width: 17px;
+  height: 17px;
+  padding: 0 4px;
+  border: 1px solid var(--char);
+  border-radius: 999px;
+  background: #bd9f67;
+  color: black;
+  font-family: var(--primary-font);
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 16px;
+  text-align: center;
+}
+
+.chop-icon-btn:hover {
+  background-color: var(--brass);
+  border-color: var(--brass);
+  color: var(--char);
+}
+
+.chop-icon-btn--static {
+  cursor: default;
+}
+
+.chop-icon-btn--static:hover {
+  background: transparent;
+  color: var(--brass);
+  border-color: var(--brass-soft);
+}
+
+/* ---------- mobile toggler ---------- */
+
+.chop-toggler {
+  display: none;
+  background: transparent;
+  border: 1px solid var(--brass-soft);
+  border-radius: 6px;
+  color: var(--bone);
+  width: 40px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- responsive ---------- */
+
+@media (max-width: 991px) {
+  .chop-toggler {
+    display: flex;
+  }
+
+  .chop-navbar__inner {
+    padding: 16px 20px;
+  }
+
+  /* Desktop collapse hidden on mobile — drawer handles mobile nav */
+  .chop-nav-collapse {
+    display: none !important;
+  }
+}
+
+/* ---------- Mobile slide-in drawer ---------- */
+
+.chop-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 1099;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(2px);
+}
+
+.chop-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1100;
+  width: 280px;
+  max-width: 85vw;
+  background: #0d1e2b;
+  border-left: 1px solid var(--brass-faint);
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Only visible on mobile */
+}
+
+.chop-drawer--open {
+  transform: translateX(0);
+}
+
+/* Hide drawer on desktop */
+@media (min-width: 992px) {
+  .chop-drawer {
+    display: none !important;
+  }
+  .chop-drawer-backdrop {
+    display: none !important;
+  }
+}
+
+.chop-drawer__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 20px 16px;
+  border-bottom: 1px solid var(--brass-faint);
+}
+
+.chop-drawer__close {
+  background: transparent;
+  border: 1px solid var(--brass-faint);
+  border-radius: 6px;
+  color: var(--bone-dim);
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 16px;
+  transition:
+    color 0.2s,
+    border-color 0.2s;
+}
+
+.chop-drawer__close:hover {
+  color: var(--bone);
+  border-color: var(--brass);
+}
+
+.chop-drawer__links {
+  list-style: none;
+  margin: 0;
+  padding: 24px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.chop-drawer__link {
+  display: block;
+  font-family: "Jost", sans-serif;
+  font-size: 15px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--bone-dim);
+  text-decoration: none;
+  padding: 12px 8px;
+  border-bottom: 1px solid var(--brass-faint);
+  transition:
+    color 0.2s,
+    padding-left 0.2s;
+}
+
+.chop-drawer__link:hover,
+.chop-drawer__link.active {
+  color: var(--brass);
+  padding-left: 14px;
+}
+
+.chop-drawer__actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+  border-top: 1px solid var(--brass-faint);
+}
+
+/* ── User initial button (opens customer panel) ── */
+.chop-user-btn {
+  font-size: 14px;
+  font-weight: 700;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  transition: all 0.25s ease !important;
+}
+
+.chop-user-btn:hover {
+  background: rgba(189, 159, 103, 0.2) !important;
+  border-color: #bd9f67 !important;
+  box-shadow: 0 0 12px rgba(189, 159, 103, 0.4) !important;
+  transform: scale(1.08);
+}
