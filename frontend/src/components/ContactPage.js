@@ -32,25 +32,53 @@ const ContactPage = () => {
                     </h2>
                   </div>
 
-                  <div className="forminput">
+                  <form
+                    className="forminput"
+                    name="contact"
+                    method="POST"
+                    data-netlify="true"
+                    data-netlify-honeypot="bot-field"
+                    action="/contactus">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p hidden>
+                      <label>
+                        Don&apos;t fill this out if you&apos;re human: <input name="bot-field" />
+                      </label>
+                    </p>
                     <label htmlFor="contactName" className="form-label">
                       Name
                     </label>
-                    <input type="text" className="form-control" id="contactName" placeholder="Name" />
+                    <input
+                      type="text"
+                      name="name"
+                      className="form-control"
+                      id="contactName"
+                      placeholder="Name"
+                      required
+                    />
                     <label htmlFor="contactEmail" className="form-label">
                       Email address
                     </label>
-                    <input type="email" className="form-control" id="contactEmail" placeholder="name@example.com" />
+                    <input
+                      type="email"
+                      name="email"
+                      className="form-control"
+                      id="contactEmail"
+                      placeholder="name@example.com"
+                      required
+                    />
                     <label htmlFor="contactMessage" className="form-label">
                       Message
                     </label>
                     <textarea
+                      name="message"
                       className="form-control"
                       placeholder="Write To Us"
                       id="contactMessage"
-                      rows="3"></textarea>
-                    <Button2 text="Send Message" />
-                  </div>
+                      rows="3"
+                      required></textarea>
+                    <Button2 text="Send Message" type="submit" />
+                  </form>
                 </div>
               </div>
             </div>
