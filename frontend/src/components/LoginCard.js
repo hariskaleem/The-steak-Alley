@@ -43,6 +43,8 @@ const LoginCard = () => {
     } catch (err) {
       if (err.status === 401 || err.status === 400) {
         setError(err.message || "Wrong Credentials! Please check your email and password.");
+      } else if (err.status) {
+        setError(err.message || "Something went wrong on our end. Please try again shortly.");
       } else {
         setError("Cannot connect to server. Please make sure the backend is running.");
       }
