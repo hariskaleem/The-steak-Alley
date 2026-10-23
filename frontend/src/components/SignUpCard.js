@@ -45,6 +45,8 @@ const SignUpCard = () => {
     } catch (err) {
       if (err.status === 409 || err.status === 400) {
         setError(err.message || "Registration failed. Please try again.");
+      } else if (err.status) {
+        setError(err.message || "Something went wrong on our end. Please try again shortly.");
       } else {
         setError("Cannot connect to server. Please make sure the backend is running.");
       }
