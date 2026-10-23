@@ -2,6 +2,7 @@ const path = require("path");
 require("dotenv").config({ path: path.join(__dirname, ".env") });
 const express = require("express");
 const cors = require("cors");
+const serverless = require("serverless-http");
 const connectDB = require("./config/db");
 const authRoutes = require("./routes/authRoutes");
 const userRoutes = require("./routes/userRoutes");
@@ -34,7 +35,8 @@ const isAllowedOrigin = (origin) => {
     origin.startsWith("https://localhost") ||
     origin.startsWith("https://127.0.0.1") ||
     origin.startsWith("https://192.168.") ||
-    origin.startsWith("https://10.")
+    origin.startsWith("https://10.") ||
+    origin.endsWith(".netlify.app")
   );
 };
 
@@ -87,8 +89,14 @@ app.use((err, req, res, next) => {
   res.status(500).json({ message: "Internal server error." });
 });
 
-// ─── Start Server ─────────────────────────────────────────────────────────────
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-});
+// ─── Start Server (Local Development Only) ────────────────────────────────────
+if (process.env.NODE_ENV !== "production") {
+  const PORT = process.env.PORT || 5000;
+  app.listen(PORT, () => {
+    console.log(`🚀 Server running on http://localhost:${PORT}`);
+  });
+}
+
+// ─── Export Handler for Serverless / Netlify ───────────────────────────────────
+module.exports = app;
+module.exports.handler = serverless(app);

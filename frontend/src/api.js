@@ -14,7 +14,8 @@ const getApiBaseUrl = () => {
     return `${protocol}//localhost:5000`;
   }
 
-  return `${protocol}//${hostname}:5000`;
+  // Production fallback: sends requests to the current host domain without forcing :5000
+  return "";
 };
 
 const BASE_URL = `${getApiBaseUrl()}/api`;
