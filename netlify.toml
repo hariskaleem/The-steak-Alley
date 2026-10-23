@@ -1,12 +1,16 @@
 [build]
   base = "frontend"
-  command = "npm run build"
+  command = "npm install && npm run build"
   publish = "build"
-  functions = "../backend"
+
+[functions]
+  directory = "../netlify/functions"
+  node_bundler = "esbuild"
+  included_files = ["../backend/**"]
 
 [[redirects]]
   from = "/api/*"
-  to = "/.netlify/functions/server/api/:splat"
+  to = "/.netlify/functions/server"
   status = 200
   force = true
 
