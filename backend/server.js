@@ -15,9 +15,6 @@ const newsletterRoutes = require("./routes/newsletterRoutes");
 
 const app = express();
 
-// ─── Connect to MongoDB ───────────────────────────────────────────────────────
-connectDB();
-
 const allowedOrigins = (process.env.ALLOWED_ORIGINS || "")
   .split(",")
   .map((origin) => origin.trim())
@@ -59,6 +56,16 @@ app.use(
 app.options("*", cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+// Ensure serverless requests wait for a reusable MongoDB connection.
+app.use(async (req, res, next) => {
+  try {
+    await connectDB();
+    next();
+  } catch (error) {
+    next(error);
+  }
+});
 
 // ─── Static: uploaded dish images ────────────────────────────────────────────
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
